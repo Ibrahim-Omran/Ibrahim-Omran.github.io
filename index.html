@@ -1,215 +1,244 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
-  <base href="/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-
-  <meta name="description"
-        content="Mobile Application Developer specializing in Flutter, focused on building high-performance cross-platform applications for Android, iOS, Web, and Desktop.">
-
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="portfolio">
-
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-  <link rel="icon" type="image/png" href="favicon.jpg"/>
-
-  <title>Ibrahim Omran</title>
-
-  <link rel="manifest" href="manifest.json">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #0f172a;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    .splash-screen {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: linear-gradient(
-        135deg,
-        #0f172a,
-        #111827,
-        #1e293b
-      );
-    }
-
-    .logo-container {
-      position: relative;
-      margin-bottom: 30px;
-    }
-
-    .logo {
-      width: 120px;
-      height: 120px;
-      border-radius: 30px;
-      object-fit: cover;
-      animation: float 2.5s ease-in-out infinite;
-      box-shadow:
-        0 0 30px rgba(59,130,246,.3),
-        0 0 60px rgba(59,130,246,.15);
-    }
-
-    .glow {
-      position: absolute;
-      inset: -10px;
-      border-radius: 40px;
-      border: 2px solid rgba(59,130,246,.3);
-      animation: pulse 2s infinite;
-    }
-
-    h1 {
-      color: white;
-      font-size: 34px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    p {
-      color: #94a3b8;
-      font-size: 15px;
-      margin-bottom: 35px;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .loader {
-      width: 240px;
-      height: 6px;
-      background: rgba(255,255,255,.08);
-      border-radius: 999px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .loader::before {
-      content: '';
-      position: absolute;
-      left: -40%;
-      width: 40%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        #3b82f6,
-        #60a5fa
-      );
-      border-radius: 999px;
-      animation: loading 1.2s infinite;
-    }
-
-    .loading-text {
-      margin-top: 18px;
-      color: #64748b;
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-
-    @keyframes loading {
-      0% {
-        left: -40%;
-      }
-      100% {
-        left: 100%;
-      }
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-12px);
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: .5;
-      }
-      50% {
-        transform: scale(1.08);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(1);
-        opacity: .5;
-      }
-    }
-
-    .fade-out {
-      animation: fadeOut .6s forwards;
-    }
-
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ibrahim Omran Desk</title>
+<meta name="description" content="Ibrahim Omran, Flutter developer in Cairo. Projects, experience and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&family=Courier+Prime:wght@400;700&family=Cairo:wght@400;700&family=Lalezar&display=swap">
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-<div class="splash-screen" id="splash">
-
-  <div class="logo-container">
-    <div class="glow"></div>
-
-    <!-- حط صورتك أو اللوجو -->
-    <img
-            src="favicon.jpg"
-            class="logo"
-            alt="Ibrahim Omran"
-    >
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="#top"><b>IO</b>ibrahim.omran</a>
+    <nav class="links" aria-label="Sections">
+      <a href="#projects" data-i18n="nav_proj">Projects</a>
+      <a href="#experience" data-i18n="nav_exp">Experience</a>
+      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#certs" data-i18n="nav_cert">Certificates</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="tb" id="tidyBtn" type="button" data-i18n="tidy">tidy up</button>
+      <button class="tb" id="langBtn" type="button" aria-label="Switch language">العربية</button>
+      <button class="tb" id="themeBtn" type="button" aria-label="Switch theme">night</button>
+    </div>
   </div>
+</header>
+<div class="lamp" aria-hidden="true"></div>
 
-  <h1>Ibrahim Omran</h1>
+<main id="top">
+  <div class="desk" id="desk">
 
-  <p>
-    Flutter Developer • Android • iOS • Web • Desktop
-  </p>
+    <section class="zone" style="--zh:63">
+      <div class="o drag badge" style="--l:5;--t:9;--w:24;--r:-2">
+        <div class="sway">
+          <i class="strap"></i><i class="clip"></i>
+          <div class="idcard paper">
+            <span class="slot"></span>
+            <span class="pic"><img src="photos/ibrahim.webp" width="720" height="910" alt="Ibrahim Omran"></span>
+            <span class="nm" data-i18n="bname">Ibrahim Omran</span>
+            <span class="rl" data-i18n="r1">Flutter Developer</span>
+            <span class="loc" data-i18n="loc">Cairo, Egypt</span>
+            <i class="barcode"></i>
+          </div>
+        </div>
+      </div>
 
-  <div class="loader"></div>
+      <div class="o drag title" style="--l:34;--t:5;--w:63;--r:0">
+        <h1><span data-i18n="n1">Ibrahim</span> <span data-i18n="n2">Omran</span></h1>
+        <p data-i18n="role">Flutter Developer | Mobile Application Developer</p>
+      </div>
 
-  <div class="loading-text">
-    LOADING PORTFOLIO...
+      <div class="o drag sticky" style="--l:34;--t:26;--w:33;--r:-2">
+        <p data-i18n="summary">Flutter Developer with 3+ years of experience shipping 7+ mobile apps using Clean Architecture, MVVM, and Bloc/Cubit, with hands-on integration of REST/GraphQL APIs, Firebase, and payment gateways. Published multiple apps to the App Store and Google Play, maintaining freelance delivery throughout military service.</p>
+        <p class="avail"><i></i><span data-i18n="avail">Available for full-time opportunities</span></p>
+      </div>
+
+      <div class="o drag receipt" style="--l:72;--t:25;--w:23;--r:3">
+        <div class="rc">
+          <h3>RECEIPT</h3>
+          <div class="ln"><span data-i18n="st1">Years of experience</span><i></i><b>3+</b></div>
+          <div class="ln"><span data-i18n="st2">Apps shipped</span><i></i><b>7+</b></div>
+          <div class="ln"><span data-i18n="st3">App stores</span><i></i><b>4</b></div>
+          <p class="thx">App Store + Google Play</p>
+        </div>
+      </div>
+
+      <div class="o labels" style="--l:34;--t:56;--w:63;--r:0">
+        <a class="lab" href="#projects" style="--lr:-1.5deg" data-i18n="cta1">See my work</a>
+        <a class="lab y" href="#contact" style="--lr:1deg" data-i18n="cta2">Say hello</a>
+        <a href="cv/Ibrahim_Omran_CV.pdf" download class="lab" style="--lr:-.5deg" data-i18n="cv">Download CV</a>
+      </div>
+    </section>
+
+    <section class="zone" id="projects" style="--zh:72">
+      <h2 class="hd" style="--l:2"><span data-i18n="z1">Things I shipped</span><small data-i18n="z1h">Click a polaroid to flip it.</small></h2>
+      <div class="pols">
+        <div class="o drag pol" tabindex="0" role="button" aria-pressed="false" style="--l:1;--t:9;--w:21;--r:-3">
+          <div class="pol-in">
+            <div class="face front"><span class="photo"><img src="photos/road-app-logo.webp" alt="Road App logo" width="360" height="360" loading="lazy"></span><span class="cap">Road App</span><span class="flipme">flip</span></div>
+            <div class="face back"><span class="kind" data-i18n="k_store">Store app</span><h3>Road App</h3><p class="d" data-i18n="p3_d">Connects car owners with repair shops for quotes, scheduling, and reviews.</p><ul class="tg"><li>Flutter</li><li>Cubit</li><li>Firebase</li><li>REST APIs</li></ul><div class="lk"><a href="https://play.google.com/store/apps/details?id=com.digifly.roadapp&amp;pcampaignid=web_share" target="_blank" rel="noopener">Play Store</a><a href="https://apps.apple.com/eg/app/road-app/id6740161753" target="_blank" rel="noopener">App Store</a></div></div>
+          </div>
+        </div>
+        <div class="o drag pol" tabindex="0" role="button" aria-pressed="false" style="--l:26;--t:11;--w:21;--r:2">
+          <div class="pol-in">
+            <div class="face front"><span class="photo"><img src="photos/koala-logo.webp" alt="Koala logo" width="360" height="360" loading="lazy"></span><span class="cap">Koala</span><span class="flipme">flip</span></div>
+            <div class="face back"><span class="kind" data-i18n="k_store">Store app</span><h3>Koala</h3><p class="d" data-i18n="p4_d">Parenting app to track child growth and connect with a parent community.</p><ul class="tg"><li>Flutter</li><li>Cubit</li><li>Firebase</li><li>REST APIs</li></ul><div class="lk"><a href="https://play.google.com/store/apps/details?id=com.digifly.koala&amp;pcampaignid=web_share" target="_blank" rel="noopener">Play Store</a><a href="https://apps.apple.com/eg/app/koala/id6745189505" target="_blank" rel="noopener">App Store</a></div></div>
+          </div>
+        </div>
+        <div class="o drag pol" tabindex="0" role="button" aria-pressed="false" style="--l:51;--t:8.5;--w:21;--r:-1.5">
+          <div class="pol-in">
+            <div class="face front"><span class="photo"><img src="photos/mega-top-logo.webp" alt="Mega Top logo" width="360" height="360" loading="lazy"></span><span class="cap">Mega Top</span><span class="flipme">flip</span></div>
+            <div class="face back"><span class="kind" data-i18n="k_store">Store app</span><h3>Mega Top</h3><p class="d" data-i18n="p2_d">Tech shopping app for browsing, comparing, and buying gadgets.</p><ul class="tg"><li>Flutter</li><li>Cubit</li><li>Firebase</li><li>REST APIs</li></ul><div class="lk"><a href="https://play.google.com/store/apps/details?id=com.splend.megatopappeg" target="_blank" rel="noopener">Play Store</a><a href="https://apps.apple.com/eg/app/megatop-%D9%85%D9%8A%D8%AC%D8%A7-%D8%AA%D9%88%D8%A8/id6749935757" target="_blank" rel="noopener">App Store</a></div></div>
+          </div>
+        </div>
+        <div class="o drag pol" tabindex="0" role="button" aria-pressed="false" style="--l:76;--t:10.5;--w:21;--r:3">
+          <div class="pol-in">
+            <div class="face front"><span class="photo"><img src="photos/hessaby-logo.webp" alt="Hessaby logo" width="360" height="360" loading="lazy"></span><span class="cap">Hessaby</span><span class="flipme">flip</span></div>
+            <div class="face back"><span class="kind" data-i18n="k_free">Freelance</span><h3>Hessaby</h3><p class="d" data-i18n="p5_d">App for small shop owners to track sales, expenses, and debts, with reports and Excel export.</p><ul class="tg"><li>Flutter</li></ul><div class="lk"><a href="https://ibrahim-omran.github.io/hessaby/" target="_blank" rel="noopener" data-i18n="landing">Landing page</a></div></div>
+          </div>
+        </div>
+        <div class="o drag pol" tabindex="0" role="button" aria-pressed="false" style="--l:5;--t:38;--w:21;--r:2.5">
+          <div class="pol-in">
+            <div class="face front"><span class="photo"><img src="photos/mhc-laboratory-logo.webp" alt="MHC Laboratory logo" width="360" height="360" loading="lazy"></span><span class="cap">MHC Laboratory</span><span class="flipme">flip</span></div>
+            <div class="face back"><span class="kind" data-i18n="k_free">Freelance</span><h3>MHC Laboratory</h3><p class="d" data-i18n="p6_d">Home lab-testing app: visit booking, order tracking, PDF results, plus an admin dashboard.</p><ul class="tg"><li>Flutter</li></ul><div class="lk"><a href="https://ibrahim-omran.github.io/MHC-Lab/" target="_blank" rel="noopener" data-i18n="landing">Landing page</a></div></div>
+          </div>
+        </div>
+        <div class="o drag pol" tabindex="0" role="button" aria-pressed="false" style="--l:29;--t:40;--w:21;--r:-2.5">
+          <div class="pol-in">
+            <div class="face front"><span class="photo"><img src="photos/qr-share-logo.webp" alt="QR Share logo" width="360" height="360" loading="lazy"></span><span class="cap">QR Share</span><span class="flipme">flip</span></div>
+            <div class="face back"><span class="kind" data-i18n="k_off">Offline sharing</span><h3>QR Share</h3><p class="d" data-i18n="p1_d">Flutter app for device-to-device file transfer with no internet, using native Android integration and a custom connection-reliability layer (LocalOnlyHotspot, QR pairing, local HTTP server, Kotlin MethodChannels).</p><ul class="tg"><li>Flutter</li><li>Kotlin</li><li>MVVM</li></ul><div class="lk"><a href="https://drive.google.com/file/d/1-h0iPEYoSX-iYbCTWWNomv9n76Yjyxpf/view" target="_blank" rel="noopener">Demo</a><a href="https://drive.google.com/file/d/1TMR36QvzyZTWGBKdZimeJUNv1qE2DXef/view" target="_blank" rel="noopener">APK</a><a href="https://github.com/Ibrahim-Omran/qr-share-app/tree/main" target="_blank" rel="noopener">README</a></div></div>
+          </div>
+        </div>
+        <div class="o drag pol" tabindex="0" role="button" aria-pressed="false" style="--l:53;--t:38.5;--w:21;--r:1.5">
+          <div class="pol-in">
+            <div class="face front"><span class="photo mono">H<b>+</b></span><span class="cap">Healthify</span><span class="flipme">flip</span></div>
+            <div class="face back"><span class="kind" data-i18n="k_ai">AI-assisted</span><h3>Healthify</h3><p class="d" data-i18n="p7_d">AI-assisted diagnostic app for bone fractures, COVID-19, skin disease, and pneumonia.</p><ul class="tg"><li>Flutter</li><li>Cubit</li><li>Firebase</li><li>AI</li></ul><div class="lk"><a href="https://github.com/Ibrahim-Omran/healthify" target="_blank" rel="noopener">GitHub</a></div></div>
+          </div>
+        </div>
+        <div class="o drag pol" tabindex="0" role="button" aria-pressed="false" style="--l:77;--t:41;--w:21;--r:-3">
+          <div class="pol-in">
+            <div class="face front"><span class="photo mono">R<b>x</b></span><span class="cap">Responsive X</span><span class="flipme">flip</span></div>
+            <div class="face back"><span class="kind" data-i18n="k_oss">Open source</span><h3>Responsive X Toolkit</h3><p class="d" data-i18n="p8_d">Flutter package for responsive scaling without BuildContext, published on pub.dev.</p><ul class="tg"><li>Flutter</li><li>Dart</li></ul><div class="lk"><a href="https://pub.dev/packages/responsive_x_toolkit" target="_blank" rel="noopener">pub.dev</a></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="zone" id="experience" style="--zh:50">
+      <h2 class="hd" style="--l:2"><span data-i18n="z2">Where I worked</span><small data-i18n="z2h">Newest first.</small></h2>
+      <div class="idxs">
+        <article class="o drag paper idx" style="--l:1;--t:9;--w:31;--r:-1.5;--tp:rgba(255,143,177,.78)">
+          <span class="date" data-i18n="j1_when">May 2025 – Present</span>
+          <h3 data-i18n="j1_role">Freelance Flutter Developer</h3><span class="now" data-i18n="now">now</span>
+          <p class="co" data-i18n="j1_co">Self-employed / Remote Clients</p>
+          <ul>
+            <li data-i18n="j1_a">Delivered end-to-end Flutter mobile applications for independent clients, covering UI, state management, and API/Firebase integration.</li>
+            <li data-i18n="j1_b">Maintained consistent client delivery and met project timelines while completing mandatory military service.</li>
+            <li data-i18n="j1_c">Delivered freelance apps for clients, including Hessaby (sales and expense tracking) and MHC Laboratory (home lab testing).</li>
+          </ul>
+        </article>
+        <article class="o drag paper idx" style="--l:34.5;--t:11;--w:31;--r:1.2;--tp:rgba(82,214,176,.75)">
+          <span class="date" data-i18n="j2_when">Oct 2024 – Apr 2025</span>
+          <h3 data-i18n="j2_role">Flutter Developer</h3>
+          <p class="co" data-i18n="j2_co">DigiFly Company, Egypt</p>
+          <ul>
+            <li data-i18n="j2_a">Developed and maintained 4+ Flutter mobile applications, taking each from architecture design through release.</li>
+            <li data-i18n="j2_b">Published 3+ applications to the App Store and Google Play, owning store listings, versioning, and release workflows.</li>
+            <li data-i18n="j2_c">Implemented Bloc and Riverpod within a Clean Architecture setup, integrating REST APIs and Sqflite/Firebase persistence.</li>
+          </ul>
+        </article>
+        <article class="o drag paper idx" style="--l:68;--t:8.5;--w:30;--r:-1;--tp:rgba(183,155,255,.78)">
+          <span class="date" data-i18n="j3_when">Mar 2024 – Aug 2024</span>
+          <h3 data-i18n="j3_role">Flutter Developer</h3>
+          <p class="co" data-i18n="j3_co">Envapress Company, Egypt</p>
+          <ul>
+            <li data-i18n="j3_a">Built and maintained 3+ Flutter mobile applications from initial architecture through production release.</li>
+            <li data-i18n="j3_b">Published 2+ applications to the App Store and Google Play, owning the deployment and release process end-to-end.</li>
+            <li data-i18n="j3_c">Applied Bloc-based state management and Clean Architecture, integrating REST APIs with Sqflite, Hive, and Firebase.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="zone" id="skills" style="--zh:52">
+      <h2 class="hd" style="--l:2"><span data-i18n="z3">My laptop stickers</span><small data-i18n="z3h">My stack. Drag them around.</small></h2>
+      <div class="o lid" style="--l:2;--t:9;--w:62;--r:0">
+<span class="st p drag" style="--sl:2.3%;--st:5.0%;--r:11.0;background:#ff5d5d;color:#ffffff">Flutter</span>
+<span class="st c drag" style="--sl:21.4%;--st:4.8%;--r:2.3;background:#52d6b0;color:#0c2a22">Dart</span>
+<span class="st p drag" style="--sl:39.2%;--st:4.8%;--r:3.4;background:#ffffff;color:#1d2330">Android</span>
+<span class="st p drag" style="--sl:60.7%;--st:2.9%;--r:-5.1;background:#2b59ff;color:#ffffff">Kotlin</span>
+<span class="st p drag" style="--sl:76.9%;--st:6.1%;--r:5.0;background:#b79bff;color:#1d1236">Bloc/Cubit</span>
+<span class="st p drag" style="--sl:0.7%;--st:28.9%;--r:12.1;background:#ff5d5d;color:#ffffff">Riverpod</span>
+<span class="st c drag" style="--sl:22.1%;--st:27.3%;--r:-8.9;background:#52d6b0;color:#0c2a22">MVVM</span>
+<span class="st p drag" style="--sl:38.6%;--st:26.9%;--r:-11.5;background:#ffffff;color:#1d2330">Clean Architecture</span>
+<span class="st p drag" style="--sl:58.3%;--st:25.6%;--r:-12.2;background:#2b59ff;color:#ffffff">REST APIs</span>
+<span class="st p drag" style="--sl:78.4%;--st:26.5%;--r:8.9;background:#b79bff;color:#1d1236">GraphQL</span>
+<span class="st p drag" style="--sl:2.6%;--st:49.4%;--r:-0.0;background:#ff5d5d;color:#ffffff">Firebase</span>
+<span class="st p drag" style="--sl:22.1%;--st:48.6%;--r:-5.8;background:#52d6b0;color:#0c2a22">Sqflite</span>
+<span class="st c drag" style="--sl:42.5%;--st:51.0%;--r:8.8;background:#ffffff;color:#1d2330">Hive</span>
+<span class="st p drag" style="--sl:60.3%;--st:47.9%;--r:-7.0;background:#2b59ff;color:#ffffff">Stripe</span>
+<span class="st p drag" style="--sl:77.7%;--st:46.8%;--r:6.9;background:#b79bff;color:#1d1236">Paymob</span>
+<span class="st p drag" style="--sl:2.1%;--st:72.3%;--r:-3.0;background:#ff5d5d;color:#ffffff">PayPal</span>
+<span class="st c drag" style="--sl:23.3%;--st:72.3%;--r:-13.0;background:#52d6b0;color:#0c2a22">Git</span>
+<span class="st c drag" style="--sl:39.3%;--st:72.6%;--r:-0.8;background:#ffffff;color:#1d2330">CI/CD</span>
+<span class="st p drag" style="--sl:61.4%;--st:70.3%;--r:-11.1;background:#2b59ff;color:#ffffff">Sentry</span>
+<span class="st p drag" style="--sl:79.0%;--st:72.0%;--r:-6.0;background:#b79bff;color:#1d1236">Firebase Console</span>
+
+        <span class="lidnote" data-i18n="lidnote">Flutter, Dart and friends</span>
+      </div>
+      <div class="idxs">
+        <article class="o drag paper idx small" style="--l:68;--t:10;--w:29;--r:2;--tp:rgba(255,224,102,.85)">
+          <h4 data-i18n="edu_h">Education</h4>
+          <p data-i18n="edu_d">Bachelor's degree in Computer Science, Thebes Academy</p>
+          <p class="m">2020 – 2024</p>
+        </article>
+        <article class="o drag paper idx small" style="--l:71;--t:28;--w:25;--r:-2.5;--tp:rgba(255,143,177,.78)">
+          <h4 data-i18n="langs_l">Languages</h4>
+          <p data-i18n="langs_v">Arabic (native), English (intermediate)</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="zone flowh" id="certs" style="--zh:64">
+      <h2 class="hd" style="--l:2"><span data-i18n="z4">Pinned certificates</span><small data-i18n="z4h">Six Udemy courses. Click one to open it.</small></h2>
+      <div class="board">
+        <ul class="certs">
+<li><a href="https://www.udemy.com/certificate/UC-8fb103d2-cbd1-4a0d-b8a0-31bd4456647e/" target="_blank" rel="noopener"><img src="photos/certs/cert-flutter-and-dart-complete-development-cours.webp" width="560" height="420" loading="lazy" alt="Udemy certificate: Flutter &amp; Dart Complete Development Course"><span class="ct">Flutter &amp; Dart Complete Development Course</span><span class="cm">Udemy · Feb 17, 2023 · 40 h</span></a></li>
+<li><a href="https://www.udemy.com/certificate/UC-a4c96f16-3c86-4771-a0a1-0da15af55fc0/" target="_blank" rel="noopener"><img src="photos/certs/cert-flutter-advanced-course-bloc-and-mvvm-patte.webp" width="560" height="420" loading="lazy" alt="Udemy certificate: Flutter Advanced Course: Bloc and MVVM Pattern"><span class="ct">Flutter Advanced Course: Bloc and MVVM Pattern</span><span class="cm">Udemy · Mar 1, 2023 · 15.5 h</span></a></li>
+<li><a href="https://www.udemy.com/certificate/UC-5f275ba4-dbfd-4954-baef-86ec4b27f930/" target="_blank" rel="noopener"><img src="photos/certs/cert-flutter-clean-architecture-in-arabic.webp" width="560" height="420" loading="lazy" alt="Udemy certificate: Flutter Clean Architecture (In Arabic)"><span class="ct">Flutter Clean Architecture (In Arabic)</span><span class="cm">Udemy · Jun 17, 2026 · 8 h</span></a></li>
+<li><a href="https://www.udemy.com/certificate/UC-3d6df4c9-473a-4905-91a4-21e0a8aa7dc6/" target="_blank" rel="noopener"><img src="photos/certs/cert-mastering-flutter-responsive-and-adaptive-u.webp" width="560" height="420" loading="lazy" alt="Udemy certificate: Mastering Flutter: Responsive &amp; Adaptive UI Design"><span class="ct">Mastering Flutter: Responsive &amp; Adaptive UI Design</span><span class="cm">Udemy · May 30, 2026 · 14.5 h</span></a></li>
+<li><a href="https://www.udemy.com/certificate/UC-45a0a7b4-a13f-4b29-9d8b-7f15343451be/" target="_blank" rel="noopener"><img src="photos/certs/cert-flutter-payment-integration-stripe-paypal-a.webp" width="560" height="420" loading="lazy" alt="Udemy certificate: Flutter Payment Integration: Stripe, PayPal &amp; More!"><span class="ct">Flutter Payment Integration: Stripe, PayPal &amp; More!</span><span class="cm">Udemy · Jun 2, 2026 · 8 h</span></a></li>
+<li><a href="https://www.udemy.com/certificate/UC-8826e565-36e1-40e7-b319-f7eab885a287/" target="_blank" rel="noopener"><img src="photos/certs/cert-master-solid-principles.webp" width="560" height="420" loading="lazy" alt="Udemy certificate: Master SOLID Principles"><span class="ct">Master SOLID Principles</span><span class="cm">Udemy · Sep 20, 2024 · 1.5 h</span></a></li>
+</ul>
+      </div>
+    </section>
+
+    <section class="zone" id="contact" style="--zh:50">
+      <h2 class="hd" style="--l:2"><span data-i18n="z5">Say hello</span></h2>
+      <div class="o drag paper bcard" style="--l:4;--t:10;--w:42;--r:-2.5">
+        <span class="nm" data-i18n="bname">Ibrahim Omran</span>
+        <span class="rl" data-i18n="role">Flutter Developer | Mobile Application Developer</span>
+        <div class="row"><span class="k">email</span><a class="v" href="mailto:omranibraheem705@gmail.com">omranibraheem705@gmail.com</a><button class="copy" type="button" data-copy="omranibraheem705@gmail.com">copy</button></div>
+        <div class="row"><span class="k" data-i18n="c_phone">phone</span><span class="v">+20 101 645 5643</span><button class="copy" type="button" data-copy="+20 101 645 5643">copy</button></div>
+        <div class="row"><span class="k" data-i18n="c_loc">location</span><span class="v" data-i18n="c_loc_v">Cairo, Egypt</span></div>
+        <div class="row"><span class="k">github</span><a class="v" href="https://github.com/Ibrahim-Omran" target="_blank" rel="noopener">github.com/Ibrahim-Omran</a></div>
+        <div class="row"><span class="k">linkedin</span><a class="v" href="https://www.linkedin.com/in/ibrahim-haroon-omran-a35444222/" target="_blank" rel="noopener">linkedin.com/in/ibrahim-haroon-omran</a></div>
+      </div>
+      <div class="o drag sticky" style="--l:54;--t:9;--w:32;--r:2">
+        <p data-i18n="contact_lede">I'm looking for a full-time Flutter role. Email is the quickest way to reach me.</p>
+        <div class="labels" style="margin-top:.9em"><a href="cv/Ibrahim_Omran_CV.pdf" download class="lab" data-i18n="cv">Download CV</a></div>
+      </div>
+      <div class="o mug" aria-hidden="true" style="--l:66;--t:27;--w:20;--r:0"><i class="a"></i><i class="b"></i><i class="h"></i><i class="ring"></i></div>
+    </section>
+    <p class="foot">© 2026 Ibrahim Haroon Omran</p>
   </div>
+</main>
 
-</div>
-
-<script>
-  window.addEventListener('flutter-first-frame', function () {
-    const splash = document.getElementById('splash');
-
-    splash.classList.add('fade-out');
-
-    setTimeout(() => {
-      splash.remove();
-    }, 700);
-  });
-</script>
-
-<script src="flutter_bootstrap.js" async></script>
-
+<script src="js/main.js" defer></script>
 </body>
 </html>
